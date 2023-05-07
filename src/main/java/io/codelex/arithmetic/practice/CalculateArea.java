@@ -55,7 +55,7 @@ public class CalculateArea {
 
     public static void calculateCircleArea() {
 
-        BigDecimal radius = ZERO;
+        BigDecimal radius;
 
         // Get input from user
         Scanner keyboard = new Scanner(System.in);
@@ -68,8 +68,8 @@ public class CalculateArea {
     }
 
     public static void calculateRectangleArea() {
-        BigDecimal length = ZERO;
-        BigDecimal width = ZERO;
+        BigDecimal length;
+        BigDecimal width;
 
         // Get input from user
         Scanner keyboard = new Scanner(System.in);
@@ -90,8 +90,8 @@ public class CalculateArea {
     }
 
     public static void calculateTriangleArea() {
-        BigDecimal base = ZERO;
-        BigDecimal height = ZERO;
+        BigDecimal base ;
+        BigDecimal height;
 
         // Get input from user
         Scanner keyboard = new Scanner(System.in);

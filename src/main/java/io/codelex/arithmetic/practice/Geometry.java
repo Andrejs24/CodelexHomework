@@ -1,6 +1,5 @@
 package io.codelex.arithmetic.practice;
 
-import io.codelex.NoCodeWrittenException;
 
 import java.math.BigDecimal;
 
