@@ -21,21 +21,25 @@ public class RandomNumberPositions {
 
         for (i = 0; i < integers.length; i++) {
             //todo - search for integer - break when you have found what you searched for
+            if (integers[i] == searchFor) {
+                foundIt = true;
+                break;
+            }
+        }
+            if (foundIt) {
+                System.out.println("Found " + searchFor + " at index " + i);
+            } else {
+                System.out.println(searchFor + " is not in the array");
+            }
         }
 
-        if (foundIt) {
-            System.out.println("Found " + searchFor + " at index " + i);
-        } else {
-            System.out.println(searchFor + " is not in the array");
+        private static Integer[] randomIntegers ( int n){
+            List<Integer> list = new ArrayList<>(n);
+
+            for (int i = 0; i < n; i++) {
+                list.add(nextInt(0, 99));
+            }
+            return list.toArray(new Integer[0]);
         }
     }
 
-    private static Integer[] randomIntegers(int n) {
-        List<Integer> list = new ArrayList<>(n);
-
-        for (int i = 0; i < n; i++) {
-            list.add(nextInt(0, 99));
-        }
-        return list.toArray(new Integer[0]);
-    }
-}
