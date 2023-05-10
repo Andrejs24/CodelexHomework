@@ -10,8 +10,6 @@ public class TenBillion {
         System.out.print("Input an integer number less than ten billion: ");
 
 
-
-
         //todo - check if Long
         if (in.hasNextLong()) {
             long n = in.nextLong();
