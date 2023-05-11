@@ -2,7 +2,7 @@ package io.codelex.flowcontrol.practice;
 
 
 import java.util.Scanner;
-import io.codelex.flowcontrol.Homeworks.Exercise1FlowControl;
+import io.codelex.flowcontrol.homeworks.Exercise1FlowControl;
 
 
 public class LargestNumber {

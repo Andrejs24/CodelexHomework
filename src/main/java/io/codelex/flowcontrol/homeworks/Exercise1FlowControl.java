@@ -1,4 +1,4 @@
-package io.codelex.flowcontrol.Homeworks;
+package io.codelex.flowcontrol.homeworks;
 
 public class Exercise1FlowControl {
 
