@@ -12,19 +12,27 @@ public class Exercise2 {
         System.out.println("Please enter a min number");
         int minNumber = input.nextInt();
 
+
         System.out.println("Please enter a max number");
         int maxNumber = input.nextInt();
 
-        int myArray[];
+        int myArray[] = new int[maxNumber - minNumber + 1];
         int sum = 0;
+        for (int i = 0; i < myArray.length; i++) {
+            myArray[i] = minNumber++;
 
-        /*
-        fixme
-        for (........) {
-        ........
         }
-        */
+
+        for (int number : myArray) {
+
+            sum += number;
+
+
+        }
 
         System.out.println("The sum is " + sum);
     }
+
+
 }
+
