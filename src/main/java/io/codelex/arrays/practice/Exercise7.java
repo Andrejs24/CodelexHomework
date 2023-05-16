@@ -20,9 +20,9 @@ public class Exercise7 {
         showField();
         while (!gameOver) {
             System.out.println("Enter row use chose :");
-            int row = scanner.nextInt();
+            int row = scanner.nextInt() - 1;
             System.out.println("Enter column you chose");
-            int column = scanner.nextInt();
+            int column = scanner.nextInt() - 1;
             if (isValidMove(row, column)) {
                 playersTurn(row, column, currentPlayer);
 
@@ -38,9 +38,10 @@ public class Exercise7 {
             } else {
                 System.out.println("Invalid move! Please try again.");
             }
+            showField();
         }
 
-        showField();
+
         System.out.println("Game over.");
 
     }
@@ -53,34 +54,36 @@ public class Exercise7 {
     }
 
     public static char[][] playersTurn(int row, int column, char player) {
-        field[row - 1][column - 1] = player;
+        field[row][column] = player;
         return field;
 
     }
 
     public static boolean isValidMove(int row, int column) {
-        return row > 0 && row < FIELD_SIZE && column > 0 && column < FIELD_SIZE && field[row - 1][column - 1] == EMPTY;
+        if (row >= 0 && row < FIELD_SIZE && column >= 0 && column < FIELD_SIZE && field[row][column] == EMPTY) {
+            return true;
 
+        } else return false;
     }
 
-    public static boolean isWinningMove(int row, int col) {
-        char symbol = field[row][col];
+    public static boolean isWinningMove(int row, int column) {
+        char symbol = field[row][column];
 
         if (field[row][0] == symbol && field[row][1] == symbol && field[row][2] == symbol) {
             return true;
         }
 
-        if (field[0][col] == symbol && field[1][col] == symbol && field[2][col] == symbol) {
+        if (field[0][column] == symbol && field[1][column] == symbol && field[2][column] == symbol) {
             return true;
         }
 
-        if (row == col) {
+        if (row == column) {
             if (field[0][0] == symbol && field[1][1] == symbol && field[2][2] == symbol) {
                 return true;
             }
         }
 
-        if (row + col == 2) {
+        if (row + column == 2) {
             if (field[0][2] == symbol && field[1][1] == symbol && field[2][0] == symbol) {
                 return true;
             }
