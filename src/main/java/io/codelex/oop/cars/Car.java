@@ -2,6 +2,7 @@ package io.codelex.oop.cars;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
 
 public class Car {
@@ -13,18 +14,22 @@ public class Car {
 
     private LocalDate dateOfManufacture;
 
-    private Manufacturer manufacturer;
+    private List<Manufacturer> manufacturers;
 
     private Engine engineType;
 
 
-    public Car(String name, String model, BigDecimal price, LocalDate dateOfManufacture, Manufacturer manufacturer, Engine engineType) {
+    public Car(String name, String model, BigDecimal price, LocalDate dateOfManufacture, List<Manufacturer> manufacturers, Engine engineType) {
         this.name = name;
         this.model = model;
         this.price = price;
         this.dateOfManufacture = dateOfManufacture;
-        this.manufacturer = manufacturer;
+        this.manufacturers = manufacturers;
         this.engineType = engineType;
+    }
+
+    public Car() {
+
     }
 
 
@@ -44,11 +49,12 @@ public class Car {
         return dateOfManufacture;
     }
 
-    public Manufacturer getManufacturer() {
-        return manufacturer;
+    public List<Manufacturer> getManufacturer() {
+        return manufacturers;
     }
 
     public Engine getEngineType() {
+
         return engineType;
     }
 
@@ -58,12 +64,12 @@ public class Car {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return Objects.equals(name, car.name) && Objects.equals(model, car.model) && Objects.equals(price, car.price) && Objects.equals(dateOfManufacture, car.dateOfManufacture) && Objects.equals(manufacturer, car.manufacturer) && engineType == car.engineType;
+        return Objects.equals(name, car.name) && Objects.equals(model, car.model) && Objects.equals(price, car.price) && Objects.equals(dateOfManufacture, car.dateOfManufacture) && Objects.equals(manufacturers, car.manufacturers) && engineType == car.engineType;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, model, price, dateOfManufacture, manufacturer, engineType);
+        return Objects.hash(name, model, price, dateOfManufacture, manufacturers, engineType);
     }
 
 
@@ -74,7 +80,7 @@ public class Car {
                 ", model='" + model + '\'' +
                 ", price=" + price +
                 ", dateOfManufacture=" + dateOfManufacture +
-                ", manufacturer=" + manufacturer +
+                ", manufacturers=" + manufacturers +
                 ", engineType=" + engineType +
                 '}';
     }
