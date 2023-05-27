@@ -28,6 +28,10 @@ public class Car {
         this.engineType = engineType;
     }
 
+    public Car(BigDecimal price) {
+        this.price = price;
+    }
+
     public Car() {
 
     }

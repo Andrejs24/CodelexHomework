@@ -1,5 +1,6 @@
 package io.codelex.oop.cars;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -59,7 +60,7 @@ public class CarService {
     }
 
     public void showTheMostExpensiveCar() {
-        Car mostExpensiveCar = new Car();
+        Car mostExpensiveCar = new Car(new BigDecimal(0));
         for (Car car : listOfCars) {
             if (car.getPrice().compareTo(mostExpensiveCar.getPrice()) == 1) {
                 mostExpensiveCar = car;
@@ -70,7 +71,7 @@ public class CarService {
     }
 
     public void showCheapestCar() {
-        Car cheapestCar = new Car();
+        Car cheapestCar = listOfCars.get(0);
         for (Car car : listOfCars) {
             if (car.getPrice().compareTo(cheapestCar.getPrice()) == -1) {
                 cheapestCar = car;
@@ -93,13 +94,13 @@ public class CarService {
     }
 
     public List<Car> getCarsSorted() {
-        List<Car> sortedCars = new ArrayList<>();
+        List<Car> sortedCars = listOfCars;
         System.out.println("Choose please which way you want to sort list : ascending/descending?");
         Scanner input = new Scanner(System.in);
         String choice = input.nextLine();
         switch (choice) {
-            case "asc" -> sortedCars.sort(Comparator.comparing(Car::getPrice));
-            case "desc" -> sortedCars.sort(Comparator.comparing(Car::getPrice).reversed());
+            case "ascending" -> sortedCars.sort(Comparator.comparing(Car::getPrice));
+            case "descending" -> sortedCars.sort(Comparator.comparing(Car::getPrice).reversed());
             default -> throw new IllegalArgumentException("Wrong input!");
         }
 

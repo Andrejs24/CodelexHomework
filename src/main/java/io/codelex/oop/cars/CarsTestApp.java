@@ -63,8 +63,19 @@ public class CarsTestApp {
             System.out.print(car);
         }
 
+        System.out.println("Not sorted list of cars");
+        carService.showAllListOfCars();
         System.out.println();
-
+        System.out.println("Sorted list of cars");
+        for (Car car : carService.getCarsSorted()) {
+            System.out.println(car);
+        }
+        System.out.println();
+        System.out.println("Cheapest car is:");
+        carService.showCheapestCar();
+        System.out.println();
+        System.out.println("Most expensive car is :");
+        carService.showTheMostExpensiveCar();
     }
 
 
