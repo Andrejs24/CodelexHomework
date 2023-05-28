@@ -22,6 +22,6 @@ public class Triangle extends Shape {
 
     @Override
     public int getPerimeter() {
-        return ((width + height) + (int) (Math.sqrt(Math.pow(2, width) + Math.pow(2, height))));
+        return (width + height + (int) (Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2))));
     }
 }
