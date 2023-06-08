@@ -1,31 +1,33 @@
 package io.codelex.polymorphism.practice.exercise1;
 
-public class Lexus implements Car, Boost {
+public class Opel implements Car {
+
     private Integer currentSpeed = 0;
-    private final String name = "Lexus";
+    private final String name = "Opel";
 
 
     public String getName() {
         return name;
     }
 
+    @Override
     public void speedUp() {
-        currentSpeed += 8;
+        currentSpeed += 9;
     }
 
+    @Override
     public void slowDown() {
-        currentSpeed += 8;
+        currentSpeed -= 9;
     }
 
+    @Override
     public String showCurrentSpeed() {
         return currentSpeed.toString();
     }
 
-    public void useNitrousOxideEngine() {
-        currentSpeed = currentSpeed + 30;
-    }
-
+    @Override
     public void startEngine() {
-        System.out.println("Rrrrrrr.....");
+        System.out.println("Vivivivivi............");
+
     }
 }
