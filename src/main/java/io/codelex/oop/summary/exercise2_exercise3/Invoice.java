@@ -1,4 +1,4 @@
-package io.codelex.oop.summary.exercise2;
+package io.codelex.oop.summary.exercise2_exercise3;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -16,6 +16,9 @@ public class Invoice {
     private BigDecimal priceWithVAT;
 
     public Invoice(Order order, String number) {
+        if (order.getListOfItems().isEmpty()) {
+            throw new WrongOrderException("Cannot create invoice with an empty order.");
+        }
         this.order = order;
         this.number = number;
         this.items = order.getListOfItems();

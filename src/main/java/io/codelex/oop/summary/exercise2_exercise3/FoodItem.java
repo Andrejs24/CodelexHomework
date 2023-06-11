@@ -1,4 +1,4 @@
-package io.codelex.oop.summary.exercise2;
+package io.codelex.oop.summary.exercise2_exercise3;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -12,6 +12,9 @@ public class FoodItem extends AbstractItem {
         this.bestBefore = bestBefore;
     }
 
+    public LocalDate getBestBefore() {
+        return bestBefore;
+    }
 
     @Override
     public String fullInfo() {

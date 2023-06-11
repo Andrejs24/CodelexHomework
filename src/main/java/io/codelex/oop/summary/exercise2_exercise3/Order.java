@@ -1,5 +1,6 @@
-package io.codelex.oop.summary.exercise2;
+package io.codelex.oop.summary.exercise2_exercise3;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,8 +12,13 @@ public class Order<E extends Item> {
     }
 
     public void add(E value) {
+        if (value instanceof FoodItem) {
+            FoodItem foodItem = (FoodItem) value;
+            if (foodItem.getBestBefore().isBefore(LocalDate.now())) {
+                throw new BadFoodException("Cannot add food item with expired expiration date.");
+            }
+        }
         listOfItems.add(value);
-
     }
 
     public List<E> getListOfItems() {
