@@ -1,4 +1,4 @@
-package io.codelex.oop.summary;
+package io.codelex.oop.summary.exercise1;
 
 import java.util.function.Supplier;
 

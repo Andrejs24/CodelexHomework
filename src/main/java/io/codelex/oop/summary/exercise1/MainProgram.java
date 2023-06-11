@@ -1,4 +1,4 @@
-package io.codelex.oop.summary;
+package io.codelex.oop.summary.exercise1;
 
 public class MainProgram {
     public static void main(String[] args) {
