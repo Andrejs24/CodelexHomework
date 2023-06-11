@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.List;
 
-public class Invoice {
-    private List<AbstractItem> items;
+public class Invoice<E extends SellableThings> {
+    private List<E> items;
     private Order order;
     private String number;
 
@@ -39,7 +39,7 @@ public class Invoice {
 
     private BigDecimal calculateTotalPrice() {
         BigDecimal totalPrice = BigDecimal.ZERO;
-        for (AbstractItem item : items) {
+        for (E item : items) {
             totalPrice = totalPrice.add(item.price());
         }
         return totalPrice;

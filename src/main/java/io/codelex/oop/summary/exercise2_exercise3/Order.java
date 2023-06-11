@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Order<E extends Item> {
+public class Order<E extends SellableThings> {
     private List<E> listOfItems;
 
     public Order() {
