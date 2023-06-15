@@ -17,8 +17,9 @@ public class ArrayListExercise3 {
         System.out.println(colors);
 
         //TODO: Add new color at the first and third position of the list
-
-        //Print the list
+        colors.add(0, "Blue");
+        System.out.println(colors);
+        colors.add(2, "Yellow");
         System.out.println(colors);
     }
 
