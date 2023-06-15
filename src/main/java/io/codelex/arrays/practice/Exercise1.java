@@ -1,5 +1,8 @@
 package io.codelex.arrays.practice;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Exercise1 {
 
     //TODO: Write a Java program to sort a numeric array and a string array.
@@ -20,15 +23,33 @@ public class Exercise1 {
                 "C++"
         };
 
-        /*
-        fixme
-        System.out.println("Original numeric array : " + .........);
-        ........... //Sort array
-        System.out.println("Sorted numeric array : " + .........);
 
-        System.out.println("Original string array : " + .........);
-        ......... //Sort array
-        System.out.println("Sorted string array : " + .........);
-        */
+        // fixme
+        System.out.print("Original numeric array : ");
+        for (int number : myArray1) {
+            System.out.print(number + " ");
+        }
+        System.out.println();
+        Arrays.sort(myArray1);
+        System.out.print("Sorted numeric array : ");
+        for (int number : myArray1) {
+            System.out.print(number + " ");
+
+        }
+        System.out.println();
+        System.out.println();
+        System.out.print("Original string array : ");
+        for (String word : myArray2) {
+            System.out.print(word + " ");
+        }
+        System.out.println();
+        Arrays.sort(myArray2);
+        System.out.print("Sorted string array : ");
+        for (String word : myArray2) {
+            System.out.print(word + " ");
+        }
     }
+
+
 }
+
