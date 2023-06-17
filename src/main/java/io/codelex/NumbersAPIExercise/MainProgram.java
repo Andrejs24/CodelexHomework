@@ -1,21 +1,20 @@
 package io.codelex.NumbersAPIExercise;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class MainProgram {
     public static void main(String[] args) {
 
         List<Question> questionsList = new ArrayList<>();
         List<Answer> answers = new ArrayList<>();
-        Map<Question, Answer> listOfQuestionsAndAnswersForGame = new HashMap<>();
 
         for (int i = 0; i < 20; i++) {
             questionsList.add(new Question());
             answers.add(new Answer(questionsList.get(i)));
         }
-//        for (int i = 0; i < questionsList.size(); i++) {
-//            listOfQuestionsAndAnswersForGame.put(questionsList.get(i), answers.get(i));
-//        }
+
         Scanner scanner = new Scanner(System.in);
         int points = 0;
         for (int i = 0; i <= questionsList.size() - 1; i++) {
@@ -39,23 +38,9 @@ public class MainProgram {
 
         }
 
-        System.out.println(" Game over! Points earned : " + points);
+        System.out.println("Game over! Points earned : " + points);
 
 
     }
 
 }
-
-
-//        System.out.println(questionsList.get(5));
-//        System.out.println(answers.get(5).getAnswer());
-//        System.out.println(answers.get(5).getVariationForAnswer());
-//        System.out.println(answers.get(5).getVariationForAnswer());
-//        System.out.println(answers.get(5).getVariationForAnswer());
-//        System.out.println(answers.get(5));
-//
-//        System.out.println(questionsList);
-//        System.out.println("================");
-//        System.out.println(answers);
-//        System.out.println("================");
-//        System.out.println(listOfQuestionsAndAnswersForGame);

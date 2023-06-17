@@ -29,20 +29,18 @@ public class Answer {
     }
 
     public String getVariationForAnswer() {
-        int option;
         int answerAsANUmber = Integer.parseInt(getAnswer());
-        int range = answerAsANUmber / 10;
+        int range = answerAsANUmber / 2;
         int min = answerAsANUmber - range;
         int max = answerAsANUmber + range;
         Random random = new Random();
         int result = random.nextInt(max - min + 1) + min;
-        if (result % 2 == 0) {
-            option = answerAsANUmber + result;
-        } else option = answerAsANUmber - result;
-        return String.valueOf(option);
+        if (result == answerAsANUmber) {
+            result += min;
+        }
+        return String.valueOf(result);
     }
 
-    ;
 
     public boolean isAnswerTrue(String suggestion) {
         if (suggestion.equals(getAnswer())) {
