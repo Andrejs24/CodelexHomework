@@ -7,18 +7,22 @@ public class DebitCard extends Card {
         super(number, fullName, CCV, balance);
     }
 
-    public void withdraw(BigDecimal amount) throws NotEnoughFundsException {
+    public void withdraw(BigDecimal amount) {
         BigDecimal balance = super.getBalance();
         if (balance.add(amount).compareTo(BigDecimal.valueOf(10000)) > 0) {
-            throw new NotEnoughFundsException("Warning: To much money");
+            System.out.println("Warning: Too much money");
         }
         super.setBalance(balance.add(amount));
     }
 
     @Override
     public void deposit(BigDecimal amount) throws NotEnoughFundsException {
-        BigDecimal balance = super.getBalance();
+        if (getBalance().compareTo(amount) == -1) {
+            throw new NotEnoughFundsException("It's not possible!");
 
-        super.setBalance(balance.subtract(amount));
+        } else if (getBalance().subtract(amount).compareTo(new BigDecimal(100)) == -1) {
+            System.out.println("Warning: Low funds");
+        }
+        setBalance(getBalance().subtract(amount));
     }
 }

@@ -7,11 +7,11 @@ public class MainProgram {
         Card creditCard = new CreditCard(12345, "Bob Dilan", 045, new BigDecimal(10000));
         Card debitCard = new DebitCard(54321, "Samantha Rice", 054, new BigDecimal(110));
         System.out.println(creditCard.getBalance());
-        creditCard.deposit(new BigDecimal(901));
+        creditCard.deposit(new BigDecimal(9910));
         System.out.println(creditCard.getBalance());
         System.out.println("=====================");
         System.out.println(debitCard.getBalance());
-        debitCard.withdraw(new BigDecimal(1000));
+        debitCard.withdraw(new BigDecimal(11000));
         System.out.println(debitCard.getBalance());
     }
 }

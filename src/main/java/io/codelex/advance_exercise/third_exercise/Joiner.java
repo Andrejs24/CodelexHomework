@@ -11,7 +11,11 @@ public class Joiner<T> {
     public String join(T... element) {
         StringBuilder text = new StringBuilder();
         for (int i = 0; i < element.length; i++) {
-            text.append(element[i].toString()).append(separator);
+            if (i != element.length - 1) {
+                text.append(element[i].toString()).append(separator);
+            } else {
+                text.append(element[i].toString()).append("");
+            }
 
 
         }

@@ -6,27 +6,24 @@ import java.util.List;
 public class Basket<T> {
 
     private List<T> items;
-    private int currentNumberOfItems;
 
     public Basket() {
         this.items = new ArrayList<>();
-        this.currentNumberOfItems = 0;
     }
 
     public void addToBasket(T item) throws BasketFullException {
-        if (currentNumberOfItems >= 10) {
+        if (items.size() >= 10) {
             throw new BasketFullException("Basket is full");
         }
         items.add(item);
-        currentNumberOfItems++;
+        ;
     }
 
     public void removeFromBasket() throws BasketEmptyException {
-        if (currentNumberOfItems <= 0) {
+        if (items.size() <= 0) {
             throw new BasketEmptyException("Basket is empty");
         }
-        items.remove(currentNumberOfItems - 1);
-        currentNumberOfItems--;
+        items.remove(items.size() - 1);
     }
 
     public List<T> getItems() {
@@ -34,6 +31,6 @@ public class Basket<T> {
     }
 
     public int getCurrentNumberOfItems() {
-        return currentNumberOfItems;
+        return items.size();
     }
 }
