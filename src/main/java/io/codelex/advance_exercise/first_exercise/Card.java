@@ -17,9 +17,9 @@ public abstract class Card {
     }
 
 
-    public abstract void withdraw(BigDecimal amount);
+    public abstract void deposit(BigDecimal amount);
 
-    public void deposit(BigDecimal amount) throws NotEnoughFundsException {
+    public void withdraw(BigDecimal amount) throws NotEnoughFundsException {
         if (balance.compareTo(amount) == -1) {
             throw new NotEnoughFundsException("It's not possible!");
 

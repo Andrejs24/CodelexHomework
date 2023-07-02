@@ -7,7 +7,7 @@ public class DebitCard extends Card {
         super(number, fullName, CCV, balance);
     }
 
-    public void withdraw(BigDecimal amount) {
+    public void deposit(BigDecimal amount) {
         BigDecimal balance = super.getBalance();
         if (balance.add(amount).compareTo(BigDecimal.valueOf(10000)) > 0) {
             System.out.println("Warning: Too much money");
@@ -16,7 +16,7 @@ public class DebitCard extends Card {
     }
 
     @Override
-    public void deposit(BigDecimal amount) throws NotEnoughFundsException {
+    public void withdraw(BigDecimal amount) throws NotEnoughFundsException {
         if (getBalance().compareTo(amount) == -1) {
             throw new NotEnoughFundsException("It's not possible!");
 

@@ -8,14 +8,14 @@ public class CreditCard extends Card {
     }
 
     @Override
-    public void withdraw(BigDecimal amount) {
+    public void deposit(BigDecimal amount) {
         BigDecimal balance = super.getBalance();
         super.setBalance(balance.add(amount));
     }
 
 
     @Override
-    public void deposit(BigDecimal amount) throws NotEnoughFundsException {
+    public void withdraw(BigDecimal amount) throws NotEnoughFundsException {
         BigDecimal balance = super.getBalance();
         if (balance.compareTo(amount) == -1) {
             throw new NotEnoughFundsException("It's not possible!");
@@ -27,14 +27,6 @@ public class CreditCard extends Card {
     }
 }
 
-//    @Override
-//    public void deposit(BigDecimal amount) throws NotEnoughFundsException {
-//        BigDecimal balance = super.getBalance();
-//        if (balance.subtract(amount).compareTo(BigDecimal.valueOf(100)) < 0) {
-//            throw new NotEnoughFundsException("Warning: Low funds");
-//        }
-//        super.setBalance(balance.subtract(amount));
-//    }
 
 
 
